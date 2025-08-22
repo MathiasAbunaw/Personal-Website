@@ -1,0 +1,247 @@
+/*-------------------------General Page----------------------------*/
+#Intro{
+    font-size: smaller;
+    
+}
+.Hello{
+  font-size:3.5rem;
+  position: absolute; /* Allows position to be moved */
+  left: 6.5rem;
+  top:11rem;
+
+}
+.Name{
+    font-size: 1cap;
+}
+.Dev{
+    color: orange;
+    font-size:200%;
+    transition: ease-in 1.5s;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    /*Background image code */
+    background-image:
+         url("https://images.hdqwalls.com/download/white-cube-pattern-4k-bu-1920x1080.jpg"), url("https://getwallpapers.com/wallpaper/full/d/c/e/170942.jpg");
+    background-size:contain,contain;
+    background-attachment:scroll,scroll;/* When scrolling background image stays the same */
+    background-position: top center, center bottom; /* First image starts from the center to the buton then second image continues from the center to the bottom*/
+    height: 2000px; /* Set a height taller than the viewport to allow vertical scrolling */
+    margin: 0; /* Remove default margin */
+    overflow-x:hidden; /* Hide horizontal overflow to prevent any horizontal scrolling */
+    background-repeat: no-repeat, no-repeat;
+    
+    
+
+}
+/* Picture of me and mom */
+#PersonalPic{
+    width:50cap;
+    height:fit-content;/* The hieght will fit to the width of the image */
+    position: absolute;
+    right: 3cap;
+    top: 15cap;
+
+
+    /*causes Border edges to be rounder */
+}
+
+
+/*Header effects */
+
+nav .Main-Header li{ /*I used Main Header inorder to make sure it only applies to the header section not nothing else */
+    display: inline-block; /* This allows the Header List to horizontal */
+    list-style: none;
+    margin: 10px 20px;
+    padding: 10px; /*add space beteen each item aka space within*/
+    position: relative;
+    left: 40cap;
+    font-size: 20px; 
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+nav .Main-Header li a{
+    color: orange;
+    text-decoration: none;
+    flex-wrap: wrap;
+    display: inline-block; /*Does not work I dont knwo why */
+}
+
+nav .Main-Header li a:hover::after{/*this will help create the red line under the header when hovered upon */
+    content: "";/* creates empty content */
+    width:100%; /*width of the box */
+    height:6px; /* height of the box */
+    background-color: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transform: scale(1.2); /*Does not work I dont knwo why */
+}
+
+/*------------------------------------Navbar of contacts---------------------*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    background:rgba(0, 0, 0, 0.6);
+    z-index: 1000; /* Allows the navbar to be infront of all text by putting the prirotiy higher */
+}
+nav .GitHub a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    top: -65px;
+    position: relative;
+    left: 20px;
+    background-color: #333333;
+    padding: 5px 10px;
+    display:inline-block; /*: Ensures that the transform property can be applied effectively to inline elements like <a> tags.*/
+    transition: transform .3s ease;
+}
+nav .GitHub a:hover{
+    transform: scale(1.2);
+}
+
+/*--------------------About Me-------------*/
+
+#Image-1{
+    width: 20rem;
+    height: fit-content;
+    position: relative;
+    left: 0rem;
+    align-items: center;
+    top: 40rem;
+    border-radius: 50%;
+}
+#Aboutme{
+    align-items: center;
+    font-size: 3rem;
+    position: relative;
+    top: 38rem;
+    left: 7rem;
+    background-color: rgba(241, 169, 35, 0.884);
+    width: fit-content;
+    top: 40rem;
+    left: 0px;
+
+}
+.Wrapper{
+    position: relative;
+    top: 2rem;
+    padding:0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+}
+.container{
+    width: 25rem;
+    height: 2rem;
+    position: relative;
+    top:30rem;
+    left: -5rem;
+    
+}
+.Introduction{
+    text-wrap: wrap;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.container a{
+    top: 2cap;
+    position: relative;
+    text-decoration:none;
+    font-size: 17px;
+    color: white;
+    background-color: #333333;
+    padding: 5px 10px;
+    margin: 50px;
+    display: inline-block; /*: Ensures that the transform property can be applied effectively to inline elements like <a> tags.*/
+    transition: transform 0.3s ease; /*allows a smooth transition from size when I hover */
+}
+.container a:hover{
+    transform: scale(1.2); /* This allows me so that when I go to hover over Github text it does not also effect the email text making it bigger
+    Scales the element to 120% of its original size on hover.*/
+}
+/*                     Skill and experise  */
+#SkillPortfolio{
+    font-size: 4cap;
+    position:relative;
+    left: 6cap;
+    top:35cap;
+
+
+}
+#skil{
+    font-size: 2.9cap;
+}
+#about{
+    position: inherit;
+
+}
+
+/* dia (max-width: 1280px){
+    .hello {
+        font-size: 2rem;
+    }
+     .Dev{
+        font-size: 2rem; 
+    }
+     .Name {
+        font-size: 2rem;
+    }
+    nav ul {
+        flex-direction: column; 
+    }
+
+    nav ul li {
+        font-size:1rem;
+    }
+    #PersonalPic{
+    width:50cap;
+    height:fit-content;
+    right: 3cap;
+    top: 15cap;
+    border-radius: 50%; /*causes Border edges to be rounder */
+
+#Container{
+    display: flex;/* Causes item to appear horizontally */
+    position: relative;
+    flex-wrap: wrap;
+    animation: SlideLeft 20s linear infinite; /*SlideLeft is a keyframes animation name, it will run for 5 secs going linear and repeat infinately  */
+    width:max-content;
+    
+}
+
+#Sk{
+position: relative;
+width: 20rem;
+height: max-content;
+background-color: rgba(255, 255, 255, 0.616);
+margin: 2rem;
+font-size: 20px;
+
+border-radius: 1.5cap;
+transition: background-color .3s ease, transform .3 ease;
+
+
+
+}
+#Container:hover{
+    animation-play-state: paused;
+}w
+#Sk:hover{
+    transform: scale(1.2);
+    transition: all ease .6s;
+    /*background-color: darkgray; */
+}
+@keyframes SlideLeft{
+    from{transform:translateX(-50vw);} /*Translate is apart of the transform function code which allows the item to move along the x axis */
+    to{transform: translateX(80vw);}
+}
+
