@@ -1,247 +1,379 @@
 /*-------------------------General Page----------------------------*/
-#Intro{
-    font-size: smaller;
-    
+:root {
+    --page-bg: #050608;
+    --panel-bg: rgba(14, 17, 23, 0.78);
+    --panel-border: rgba(255, 255, 255, 0.1);
+    --text: #f4f0e8;
+    --muted: #b7b1a8;
+    --accent: #f6a21a;
+    --accent-hot: #ff4d2e;
+    --shadow: rgba(0, 0, 0, 0.45);
 }
-.Hello{
-  font-size:3.5rem;
-  position: absolute; /* Allows position to be moved */
-  left: 6.5rem;
-  top:11rem;
 
+* {
+    box-sizing: border-box;
 }
-.Name{
-    font-size: 1cap;
-}
-.Dev{
-    color: orange;
-    font-size:200%;
-    transition: ease-in 1.5s;
-}
-html{
+
+html {
     scroll-behavior: smooth;
 }
-body{
-    /*Background image code */
-    background-image:
-         url("https://images.hdqwalls.com/download/white-cube-pattern-4k-bu-1920x1080.jpg"), url("https://getwallpapers.com/wallpaper/full/d/c/e/170942.jpg");
-    background-size:contain,contain;
-    background-attachment:scroll,scroll;/* When scrolling background image stays the same */
-    background-position: top center, center bottom; /* First image starts from the center to the buton then second image continues from the center to the bottom*/
-    height: 2000px; /* Set a height taller than the viewport to allow vertical scrolling */
-    margin: 0; /* Remove default margin */
-    overflow-x:hidden; /* Hide horizontal overflow to prevent any horizontal scrolling */
-    background-repeat: no-repeat, no-repeat;
-    
-    
 
-}
-/* Picture of me and mom */
-#PersonalPic{
-    width:50cap;
-    height:fit-content;/* The hieght will fit to the width of the image */
-    position: absolute;
-    right: 3cap;
-    top: 15cap;
-
-
-    /*causes Border edges to be rounder */
-}
-
-
-/*Header effects */
-
-nav .Main-Header li{ /*I used Main Header inorder to make sure it only applies to the header section not nothing else */
-    display: inline-block; /* This allows the Header List to horizontal */
-    list-style: none;
-    margin: 10px 20px;
-    padding: 10px; /*add space beteen each item aka space within*/
+body {
     position: relative;
-    left: 40cap;
-    font-size: 20px; 
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-nav .Main-Header li a{
-    color: orange;
-    text-decoration: none;
-    flex-wrap: wrap;
-    display: inline-block; /*Does not work I dont knwo why */
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(120deg, rgba(246, 162, 26, 0.1), transparent 35%),
+        linear-gradient(210deg, rgba(255, 77, 46, 0.08), transparent 40%),
+        linear-gradient(rgba(5, 6, 8, 0.88), rgba(5, 6, 8, 0.94)),
+        url("image/blackimage.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-nav .Main-Header li a:hover::after{/*this will help create the red line under the header when hovered upon */
-    content: "";/* creates empty content */
-    width:100%; /*width of the box */
-    height:6px; /* height of the box */
-    background-color: red;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(246, 162, 26, 0.14), transparent 24rem),
+        radial-gradient(circle at 80% 10%, rgba(255, 77, 46, 0.1), transparent 22rem),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/*-------------------------Navigation----------------------------*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 82px;
+    padding: 0 6vw;
+    background: rgba(5, 6, 8, 0.78);
+    border-bottom: 1px solid var(--panel-border);
+    backdrop-filter: blur(16px);
+}
+
+.Main-Header {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav .Main-Header li a {
+    position: relative;
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    transition: color 0.25s ease;
+}
+
+nav .Main-Header li a::after {
+    content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
-    transform: scale(1.2); /*Does not work I dont knwo why */
+    bottom: -8px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hot));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
 }
 
-/*------------------------------------Navbar of contacts---------------------*/
-nav{
+nav .Main-Header li a:hover {
+    color: var(--accent);
+}
+
+nav .Main-Header li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav .GitHub {
     display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    height: 85px;
-    background:rgba(0, 0, 0, 0.6);
-    z-index: 1000; /* Allows the navbar to be infront of all text by putting the prirotiy higher */
+    align-items: center;
+    gap: 0.75rem;
 }
-nav .GitHub a{
+
+nav .GitHub a,
+.container a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 40px;
+    padding: 0.55rem 0.9rem;
+    color: var(--text);
     text-decoration: none;
-    color: white;
-    font-size: 20px;
-    margin: 10px;
-    top: -65px;
-    position: relative;
-    left: 20px;
-    background-color: #333333;
-    padding: 5px 10px;
-    display:inline-block; /*: Ensures that the transform property can be applied effectively to inline elements like <a> tags.*/
-    transition: transform .3s ease;
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    box-shadow: 0 12px 28px var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
-nav .GitHub a:hover{
-    transform: scale(1.2);
+
+nav .GitHub a:hover,
+.container a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(246, 162, 26, 0.7);
+    background: rgba(246, 162, 26, 0.16);
+}
+
+/*-------------------------Intro----------------------------*/
+#Intro {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr minmax(280px, 460px);
+    align-items: center;
+    gap: 3rem;
+    padding: 8rem 0 4rem;
+}
+
+.HeroText {
+    max-width: 680px;
+}
+
+.Eyebrow {
+    width: fit-content;
+    margin: 0 0 1rem;
+    padding: 0.4rem 0.7rem;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    border: 1px solid rgba(246, 162, 26, 0.35);
+    border-radius: 6px;
+    background: rgba(246, 162, 26, 0.08);
+}
+
+.Hello {
+    margin: 0;
+    font-size: clamp(2.4rem, 7vw, 5.8rem);
+    line-height: 0.95;
+    text-shadow: 0 18px 40px var(--shadow);
+}
+
+.Name {
+    display: inline-block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: clamp(1.6rem, 4vw, 3.5rem);
+}
+
+.Dev {
+    color: var(--accent);
+    transition: color 0.4s ease;
+}
+
+.Dev:hover {
+    color: var(--accent-hot);
+}
+
+#PersonalPic {
+    width: min(100%, 450px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
 }
 
 /*--------------------About Me-------------*/
-
-#Image-1{
-    width: 20rem;
-    height: fit-content;
-    position: relative;
-    left: 0rem;
-    align-items: center;
-    top: 40rem;
-    border-radius: 50%;
+#About2,
+#SkillPortfolio {
+    scroll-margin-top: 110px;
 }
-#Aboutme{
-    align-items: center;
-    font-size: 3rem;
-    position: relative;
-    top: 38rem;
-    left: 7rem;
-    background-color: rgba(241, 169, 35, 0.884);
-    width: fit-content;
-    top: 40rem;
-    left: 0px;
 
+#about {
+    padding: 5rem 0 6rem;
 }
-.Wrapper{
-    position: relative;
-    top: 2rem;
-    padding:0 15px;
+
+#Aboutme,
+#skil {
+    margin: 0 0 2rem;
+    color: var(--text);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+}
+
+#Aboutme::after,
+#skil::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 5px;
+    margin-top: 1rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hot));
+    border-radius: 999px;
+}
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: minmax(240px, 340px) 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+#Image-1 {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.container {
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.75;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    box-shadow: 0 24px 70px var(--shadow);
+}
+
+.Introduction {
+    margin: 0;
+}
+
+.ContactLinks {
     display: flex;
+    gap: 0.8rem;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 5rem;
-}
-.container{
-    width: 25rem;
-    height: 2rem;
-    position: relative;
-    top:30rem;
-    left: -5rem;
-    
-}
-.Introduction{
-    text-wrap: wrap;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
-}
-.container a{
-    top: 2cap;
-    position: relative;
-    text-decoration:none;
-    font-size: 17px;
-    color: white;
-    background-color: #333333;
-    padding: 5px 10px;
-    margin: 50px;
-    display: inline-block; /*: Ensures that the transform property can be applied effectively to inline elements like <a> tags.*/
-    transition: transform 0.3s ease; /*allows a smooth transition from size when I hover */
-}
-.container a:hover{
-    transform: scale(1.2); /* This allows me so that when I go to hover over Github text it does not also effect the email text making it bigger
-    Scales the element to 120% of its original size on hover.*/
-}
-/*                     Skill and experise  */
-#SkillPortfolio{
-    font-size: 4cap;
-    position:relative;
-    left: 6cap;
-    top:35cap;
-
-
-}
-#skil{
-    font-size: 2.9cap;
-}
-#about{
-    position: inherit;
-
+    margin-top: 1.5rem;
 }
 
-/* dia (max-width: 1280px){
-    .hello {
-        font-size: 2rem;
-    }
-     .Dev{
-        font-size: 2rem; 
-    }
-     .Name {
-        font-size: 2rem;
-    }
-    nav ul {
-        flex-direction: column; 
+/*---------------------Skill and expertise---------------------*/
+#SkillPortfolio {
+    padding: 4rem 0 7rem;
+}
+
+#Container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.SkillCard {
+    min-height: 260px;
+    padding: 1.4rem;
+    color: var(--muted);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03)),
+        rgba(13, 16, 22, 0.82);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    box-shadow: 0 22px 60px var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.SkillCard:hover {
+    transform: translateY(-8px);
+    border-color: rgba(246, 162, 26, 0.55);
+    background:
+        linear-gradient(145deg, rgba(246, 162, 26, 0.14), rgba(255, 77, 46, 0.05)),
+        rgba(13, 16, 22, 0.92);
+}
+
+.SkillCard i {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 2.2rem;
+}
+
+.SkillCard b {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.SkillCard p {
+    margin: 0;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem 1.25rem;
     }
 
-    nav ul li {
-        font-size:1rem;
+    #Intro,
+    .Wrapper {
+        grid-template-columns: 1fr;
     }
-    #PersonalPic{
-    width:50cap;
-    height:fit-content;
-    right: 3cap;
-    top: 15cap;
-    border-radius: 50%; /*causes Border edges to be rounder */
 
-#Container{
-    display: flex;/* Causes item to appear horizontally */
-    position: relative;
-    flex-wrap: wrap;
-    animation: SlideLeft 20s linear infinite; /*SlideLeft is a keyframes animation name, it will run for 5 secs going linear and repeat infinately  */
-    width:max-content;
-    
+    #Intro {
+        padding-top: 11rem;
+    }
+
+    #PersonalPic {
+        width: min(100%, 380px);
+    }
+
+    #Container {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
 }
 
-#Sk{
-position: relative;
-width: 20rem;
-height: max-content;
-background-color: rgba(255, 255, 255, 0.616);
-margin: 2rem;
-font-size: 20px;
+@media (max-width: 560px) {
+    main {
+        width: min(100% - 28px, 1180px);
+    }
 
-border-radius: 1.5cap;
-transition: background-color .3s ease, transform .3 ease;
+    .Main-Header,
+    nav .GitHub,
+    .ContactLinks {
+        gap: 0.55rem;
+    }
 
+    nav .Main-Header li a,
+    nav .GitHub a,
+    .container a {
+        font-size: 0.88rem;
+    }
 
+    #Intro {
+        padding-top: 13rem;
+    }
 
+    .container {
+        padding: 1.25rem;
+    }
+
+    #Container {
+        grid-template-columns: 1fr;
+    }
 }
-#Container:hover{
-    animation-play-state: paused;
-}w
-#Sk:hover{
-    transform: scale(1.2);
-    transition: all ease .6s;
-    /*background-color: darkgray; */
-}
-@keyframes SlideLeft{
-    from{transform:translateX(-50vw);} /*Translate is apart of the transform function code which allows the item to move along the x axis */
-    to{transform: translateX(80vw);}
-}
-

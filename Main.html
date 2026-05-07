@@ -1,41 +1,25 @@
 <!DOCTYPE html>
-<html lang="eng">
-<header>
-    <title>Home Page.com</title>
+<html lang="en">
+<head>
+    <title>Arreyebot Abunaw | Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" href="Stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!---Helps link font awasome to file-->
-
-</header>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 <body>
-<section id="Intro">
-    <!--CREATING MY NAME AND PICTURE-->
+    <header id="Headers">
+        <nav>
+            <ul class="Main-Header">
+                <li><a href="Main.html">Home</a></li>
+                <li><a href="#About2">About</a></li>
+                <li><a href="skill.Portfolio.html">Skills</a></li>
+                <li><a href="skill.Portfolio.html">Portfolio</a></li>
+                <li><a href="#contact">Contact me</a></li>
+            </ul>
 
-    <h1 class="Hello">
-        Hello I am a Software  <br>
-        <span class="Dev"> developer</span>
-        <br> 
-        <span class="Name"> Arreyebot Abunaw </span>
-        
-    </h1>
-    <img id= "PersonalPic" src="Personalimg.png" alt="Personal Image of me"> <!--Image has to be inside the project file inorder for it to work-->
-
-</body>
-</section>
-<!--Creating the Header-->
-<body>
-    <div id="Headers">
-        <nav> <!--This helps link to other pages aka you need this for navigating to other pages-->
-            <ul class="Main-Header"> <b>
-            <li><a href="http://127.0.0.1:5500/Main.html">Home</a>
-            <li><a href="#About2">About</a></li>
-            <li><a href="http://127.0.0.1:5500/skill.Portfolio.html">Skills</a></li>
-            <li><a href="http://127.0.0.1:5500/skill.Portfolio.html">Portfolio</a></li>
-            <li><a href="">Contact me</a></li>
-            </b>
-    <div class="GitHub">
-                <a href="http://127.0.0.1:5500/Main.html" target="_blank" rel="noopener">
+            <div class="GitHub" id="contact">
+                <a href="https://github.com/MathiasAbunaw?tab=repositories" target="_blank" rel="noopener">
                     <i class="fa-brands fa-github"></i>
                     <span>GitHub</span>
                 </a>
@@ -43,76 +27,89 @@
                     <i class="fa-solid fa-envelope"></i>
                     <span>Email</span>
                 </a>
-
             </div>
-        
-    </ul>
-    </nav>
-    </div>
-    <!-------------------------Social Media Logos--------------------->
-    
-
-    <!------------------------ABOUT ME SECTION----------------->
-    
-    <div id="about">
-        <b> <header id="Aboutme">About Me</header> </b>
-        <div class="Wrapper">
-            <img id="Image-1" src="SelfImage1.JPG" alt="About me Image">
-        <div class="container">
-           <p class="Introduction"></p>
-                Hello My name is Arreyebot Abunaw. I also go by Mathias Abunaw, in which you are also free to use. I am an upcoming/inspired
-                Computer Science Major 
-                planning on attending Missouri Univeristy of science and technology. At this moment I am currently 18 and am 
-                attemping to create a full stack develoment project portfolio based on my past knowlege of HTML,             
-                CSS, and Java script wish me luck. I shall also use this inorder to display my other future project's. Again I say wish me luck!
-          </p>
-    <section id="About2"></section>
-          <a href="" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i>
-            <span>Github ➤</span>
-           <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbQcwQWFFNfrJMfXtvzvFCMHwwsMnJhDkDpfLVlqZhbDSSJDcksXRqnrLkkTCdrmrxZHL" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-          </div>
-    
-        </div>
-    </div>
-</section>
-
-
-<section >
-    <div id="SkillPortfolio">
-    <header id="skil"> Skill
-        <b>
-        <br id="Expertise">Expertise
+        </nav>
     </header>
-</b>
-    <div id="Container">
-        <div id="Sk">
-            <i class="fa-brands fa-html5"></i><b> HTML--</b>
-            I have a strong grasp of HTML5 and regularly use it to build clean,
-            well-structured, and semantic web pages. I’m comfortable using a wide
-            range of elements from forms and tables to media tags and I prioritize
-            accessibility and logical document flow in every project.
-        </div>
-        <div id="Sk">
-            <i class="fa-brands fa-css3-alt"></i><b> CSS--</b>
-            I use modern CSS techniques, including Flexbox and Grid, to create 
-            responsive and visually appealing layouts. I enjoy experimenting with
-             custom animations, hover effects, and transitions to add interactivity 
-             while keeping designs clean and user-friendly. I’m also familiar with
-              using utility frameworks like Bootstrap for faster prototyping.
 
-</div>
-        <div id="Sk">
-            <i class="fa-brands fa-js"></i><b> JavaScript</b></div>
-        <div id="Sk"><b>ETC</b></div>
-        
-    </div>
-    </div>
-</section>
-</body>
-</html>
+    <main>
+        <section id="Intro">
+            <div class="HeroText">
+                <p class="Eyebrow">Personal portfolio</p>
+                <h1 class="Hello">
+                    Hello, I am a Software<br>
+                    <span class="Dev">Developer</span><br>
+                    <span class="Name">Arreyebot Abunaw</span>
+                </h1>
+            </div>
+            <img id="PersonalPic" src="Personalimg.png" alt="Personal image of Arreyebot Abunaw">
+        </section>
+
+        <section id="About2">
+            <div id="about">
+                <h2 id="Aboutme">About Me</h2>
+                <div class="Wrapper">
+                    <img id="Image-1" src="SelfImage1.JPG" alt="About me image">
+                    <div class="container">
+                        <p class="Introduction">
+                            Hello, my name is Arreyebot Abunaw. I also go by Mathias Abunaw, which you are also free to use.
+                            I am an upcoming Computer Science major planning on attending Missouri University of Science and
+                            Technology. At this moment I am currently 18 and I am attempting to create a full-stack development
+                            project portfolio based on my past knowledge of HTML, CSS, and JavaScript. I shall also use this to
+                            display my future projects.
+                        </p>
+
+                        <div class="ContactLinks">
+                            <a href="https://github.com/MathiasAbunaw?tab=repositories" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i>
+                                <span>Github</span>
+                            </a>
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbQcwQWFFNfrJMfXtvzvFCMHwwsMnJhDkDpfLVlqZhbDSSJDcksXRqnrLkkTCdrmrxZHL" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="SkillPortfolio">
+            <h2 id="skil">Skill<br>Expertise</h2>
+            <div id="Container">
+                <article class="SkillCard">
+                    <i class="fa-brands fa-html5"></i>
+                    <b>HTML</b>
+                    <p>
+                        I have a strong grasp of HTML5 and regularly use it to build clean, well-structured,
+                        and semantic web pages. I am comfortable using forms, tables, media tags, accessibility,
+                        and logical document flow in every project.
+                    </p>
+                </article>
+                <article class="SkillCard">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <b>CSS</b>
+                    <p>
+                        I use modern CSS techniques, including Flexbox and Grid, to create responsive and visually
+                        appealing layouts. I enjoy experimenting with animations, hover effects, and transitions while
+                        keeping designs clean and user-friendly.
+                    </p>
+                </article>
+                <article class="SkillCard">
+                    <i class="fa-brands fa-js"></i>
+                    <b>JavaScript</b>
+                    <p>
+                        I use JavaScript to add interactivity, build project features, and bring static pages to life.
+                    </p>
+                </article>
+                <article class="SkillCard">
+                    <i class="fa-solid fa-code"></i>
+                    <b>More</b>
+                    <p>
+                        I am continuing to grow my skills through portfolio projects, practice, and full-stack development.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
