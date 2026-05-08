@@ -491,6 +491,10 @@ nav .GitHub a:hover,
     line-height: 1.55;
 }
 
+.ProjectCard p + p {
+    margin-top: 0.85rem;
+}
+
 @media (max-width: 900px) {
     nav {
         align-items: flex-start;
